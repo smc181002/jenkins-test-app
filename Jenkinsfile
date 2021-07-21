@@ -10,7 +10,7 @@ pipeline {
 
     stage('create the homeserver.yml file') {
       steps {
-        sh 'sudo podman run -dit  -v synapse-data:/data -e SYNAPSE_SERVER_NAME=my.matrix.host -e SYNAPSE_REPORT_STATS=yes matrixdotorg/synapse:latest generate' }
+        sh 'sudo podman run -dit  -v synapse-data:/data -e SYNAPSE_SERVER_NAME=my.matrix.host -e SYNAPSE_REPORT_STATS=yes matrixdotorg/synapse:latest generate'
         sh 'sudo cp ./homeserver.yml /var/lib/containers/storage/synapse-data/_data/'
       } 
     }
